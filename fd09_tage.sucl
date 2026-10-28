@@ -1,0 +1,128 @@
+# fd09_tage, examples/fe_demo (DOC-002, DOC-004, DOC-006); written by waves/mk_sucl.py
+# from out/fd09_tage/fd09_tage.fst, 1 prediction slot(s)
+# surfer out/fd09_tage/fd09_tage.fst -c waves/fd09_tage.sucl
+variable_force_name_type Unique
+# group clock
+variable_add tb.clk
+item_focus a
+group_marked clock
+item_focus b
+item_set_format Clock
+variable_add tb.rstn
+item_set_format Bit
+variable_add tb.cyc
+item_set_format Unsigned
+item_unfocus
+# group tage_p2
+variable_add tb.dut.u_bpu.w_tage_pred_rdy_p2
+item_focus e
+group_marked tage_p2
+item_focus f
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_pred_meta_p2.[0].tage_prm_comp
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_pred_meta_p2.[0].tage_alt_comp
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_pred_meta_p2.[0].tage_using_primary
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_pred_meta_p2.[0].tage_prm_ctr
+item_set_format Binary
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_pred_meta_p2.[0].tage_pred_tkn
+item_set_format Bit
+item_unfocus
+# group bp_cluster_p2
+variable_add tb.dut.u_bpu.r_val_p2
+item_focus l
+group_marked bp_cluster_p2
+item_focus m
+item_set_format Bit
+variable_add tb.dut.bpu_slot_val_p2
+item_set_format Bit
+variable_add tb.dut.bpu_slot_idx_p2
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.w_ftb_valid_p2
+item_set_format Bit
+variable_add tb.dut.bpu_slot_p2.[0].slot_valid
+item_set_format Bit
+variable_add tb.dut.bpu_slot_p2.[0].br_type
+item_set_format Enum
+variable_add tb.dut.bpu_slot_p2.[0].pos
+item_set_format Unsigned
+variable_add tb.dut.bpu_slot_p2.[0].taken
+item_set_format Bit
+variable_add tb.dut.bpu_slot_p2.[0].target
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_slot_p2.[0].pred_src
+item_set_format Enum
+variable_add tb.dut.bpu_redir_p2.[0].valid
+item_set_format Bit
+variable_add tb.dut.bpu_redir_p2.[0].target_pc
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_redir_idx_p2
+item_set_format Unsigned
+item_unfocus
+# group backend
+variable_add tb.bkend_ftq_redir_val
+item_focus bj
+group_marked backend
+item_focus bk
+item_set_format Bit
+variable_add tb.bkend_ftq_redir_pc
+item_set_format Hexadecimal
+variable_add tb.bkend_ftq_redir_cause
+item_set_format Enum
+item_unfocus
+# group ftq_upd_conv
+variable_add tb.dut.u_ftq.u_upd_conv.lp_upd_p0.[0].pc
+item_focus bn
+group_marked ftq_upd_conv
+item_focus bo
+item_set_format Hexadecimal
+item_unfocus
+# group tage_update
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.trx_type
+item_focus bp
+group_marked tage_update
+item_focus ca
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_upd_val_u0
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_upd_inp_u0.[0].cond_mispredict
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_upd_inp_u0.[0].resolved_taken
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_upd_inp_u0.[0].tage_pred_meta.tage_prm_comp
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_upd_inp_u0.[0].tage_pred_meta.tage_alt_comp
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_upd_inp_u0.[0].tage_pred_meta.tage_pred_weak
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_upd_inp_u0.[0].tage_pred_meta.tage_prm_tkn
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.tage_upd_inp_u0.[0].tage_pred_meta.tage_alt_tkn
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.u_alc_wr.[0]
+item_set_format Bit
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.u_alc_comp.[0]
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.u_tage.u_tage_cntrl.uaon.[0]
+item_set_format Unsigned
+item_unfocus
+# markers, from docs/fd09_tage.md section 4
+marker_set c0_reset_released 36
+marker_set c2_first_TAGE_response_at_p2 55
+marker_set c20_first_allocation_write 235
+marker_set c21_first_backend_misprediction 245
+marker_set c32_the_back_edge_resolved_from_top 355
+marker_set c34_first_FTB_hit_at_p2 375
+marker_set c46_first_p2_group_at_0x8000_0016 495
+marker_set c72_first_taken_B_resolved 755
+marker_set c73_its_allocation_write 765
+marker_set c115_first_prediction_from_a_tagged_table 1185
+marker_set c225_uaon_first_increments 2285
+marker_set c441_uaon_reaches_8 4445
+marker_set c460_first_prediction_from_T0 4635
+marker_set c1355_back_edge_falls_through 13585
+marker_set c1364_the_run_ends 13675
+item_unfocus
+zoom_to 16 336
