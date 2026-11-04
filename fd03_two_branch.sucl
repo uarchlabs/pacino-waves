@@ -1,0 +1,177 @@
+# fd03_two_branch, examples/fe_demo (DOC-002, DOC-004, DOC-006); written by waves/mk_sucl.py
+# from out/fd03_two_branch/fd03_two_branch.fst, 2 prediction slot(s)
+# surfer out/fd03_two_branch/fd03_two_branch.fst -c waves/fd03_two_branch.sucl
+variable_force_name_type Unique
+# group clock
+variable_add tb.clk
+item_focus a
+group_marked clock
+item_focus b
+item_set_format Clock
+variable_add tb.rstn
+item_set_format Bit
+variable_add tb.cyc
+item_set_format Unsigned
+item_unfocus
+# group markers, from docs/fd03_two_branch.md section 5
+marker_set c0_reset_released 36
+item_focus e
+group_marked markers
+item_focus f
+marker_set c39_first_backend_misprediction 425
+marker_set c41_the_FTB_entry_for_X_holds 445
+marker_set c62_the_FTB_entry_for_Y_holds 655
+marker_set c72_the_JAL_resolves_from_Y 755
+marker_set c83_first_p1_prediction_for_X_with 865
+marker_set c84_first_p2_group_for_X_with 875
+marker_set c94_Xc1_predicted_taken 975
+marker_set c107_first_p2_group_for_Y_with 1105
+marker_set c138_first_p2_group_for_Y8_with 1415
+marker_set c147_Yc1_predicted_taken 1505
+marker_set c202_first_p2_group_for_Y6_with 2055
+marker_set c319_last_backend_misprediction_in_the_loop 3225
+marker_set c529_back_edge_falls_through 5325
+marker_set c539_the_run_ends 5425
+item_unfocus
+# group bp_cluster_p1_ubtb
+variable_add tb.dut.u_bpu.r_pc_p1
+item_focus be
+group_marked bp_cluster_p1_ubtb
+item_focus bf
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_pred_val_p1
+item_set_format Bit
+variable_add tb.dut.bpu_pred_idx_p1
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.r_ubtb_blk_p1.hit
+item_set_format Bit
+variable_add tb.dut.bpu_pred_pft_p1
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_pred_slot_p1.[0].slot_valid
+item_set_format Bit
+variable_add tb.dut.bpu_pred_slot_p1.[0].br_type
+item_set_format Enum
+variable_add tb.dut.bpu_pred_slot_p1.[0].pos
+item_set_format Unsigned
+variable_add tb.dut.bpu_pred_slot_p1.[0].taken
+item_set_format Bit
+variable_add tb.dut.bpu_pred_slot_p1.[0].target
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_pred_slot_p1.[0].pred_src
+item_set_format Enum
+variable_add tb.dut.bpu_pred_slot_p1.[1].slot_valid
+item_set_format Bit
+variable_add tb.dut.bpu_pred_slot_p1.[1].br_type
+item_set_format Enum
+variable_add tb.dut.bpu_pred_slot_p1.[1].pos
+item_set_format Unsigned
+variable_add tb.dut.bpu_pred_slot_p1.[1].taken
+item_set_format Bit
+variable_add tb.dut.bpu_pred_slot_p1.[1].target
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_pred_slot_p1.[1].pred_src
+item_set_format Enum
+item_unfocus
+# group bp_cluster_p2_ftb
+variable_add tb.dut.u_bpu.r_pc_p2
+item_focus cg
+group_marked bp_cluster_p2_ftb
+item_focus ch
+item_set_format Hexadecimal
+variable_add tb.dut.u_bpu.r_val_p2
+item_set_format Bit
+variable_add tb.dut.bpu_slot_val_p2
+item_set_format Bit
+variable_add tb.dut.bpu_slot_idx_p2
+item_set_format Unsigned
+variable_add tb.dut.u_bpu.w_ftb_valid_p2
+item_set_format Bit
+variable_add tb.dut.bpu_slot_p2.[0].slot_valid
+item_set_format Bit
+variable_add tb.dut.bpu_slot_p2.[0].br_type
+item_set_format Enum
+variable_add tb.dut.bpu_slot_p2.[0].pos
+item_set_format Unsigned
+variable_add tb.dut.bpu_slot_p2.[0].taken
+item_set_format Bit
+variable_add tb.dut.bpu_slot_p2.[0].target
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_slot_p2.[0].pred_src
+item_set_format Enum
+variable_add tb.dut.bpu_slot_p2.[1].slot_valid
+item_set_format Bit
+variable_add tb.dut.bpu_slot_p2.[1].br_type
+item_set_format Enum
+variable_add tb.dut.bpu_slot_p2.[1].pos
+item_set_format Unsigned
+variable_add tb.dut.bpu_slot_p2.[1].taken
+item_set_format Bit
+variable_add tb.dut.bpu_slot_p2.[1].target
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_slot_p2.[1].pred_src
+item_set_format Enum
+variable_add tb.dut.bpu_redir_p2.[0].valid
+item_set_format Bit
+variable_add tb.dut.bpu_redir_p2.[0].target_pc
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_redir_p2.[1].valid
+item_set_format Bit
+variable_add tb.dut.bpu_redir_p2.[1].target_pc
+item_set_format Hexadecimal
+variable_add tb.dut.bpu_redir_idx_p2
+item_set_format Unsigned
+item_unfocus
+# group ftq
+variable_add tb.dut.u_ftq.w_ok_pred_p1
+item_focus dn
+group_marked ftq
+item_focus do
+item_set_format Bit
+variable_add tb.dut.u_ftq.w_ok_slot_p2
+item_set_format Bit
+variable_add tb.dut.u_ftq.w_ok_slot_p3
+item_set_format Bit
+variable_add tb.dut.u_ftq.w_ok_redir_p2
+item_set_format Bit
+variable_add tb.dut.u_ftq.w_ok_redir_p3
+item_set_format Bit
+variable_add tb.dut.u_ftq.w_redir_val
+item_set_format Bit
+variable_add tb.dut.u_ftq.w_redir_idx
+item_set_format Unsigned
+variable_add tb.dut.u_ftq.w_commit_ptr
+item_set_format Unsigned
+variable_add tb.dut.ftq_full
+item_set_format Bit
+variable_add tb.dut.ftq_empty
+item_set_format Bit
+item_unfocus
+# group backend
+variable_add tb.bkend_ftq_redir_val
+item_focus ei
+group_marked backend
+item_focus ej
+item_set_format Bit
+variable_add tb.bkend_ftq_redir_pc
+item_set_format Hexadecimal
+variable_add tb.bkend_ftq_redir_cause
+item_set_format Enum
+item_unfocus
+# group ftb_update
+variable_add tb.dut.ftb_upd_valid_u0
+item_focus em
+group_marked ftb_update
+item_focus en
+item_set_format Bit
+variable_add tb.dut.ftb_upd_pc_u0
+item_set_format Hexadecimal
+variable_add tb.dut.ftb_upd_pos_u0
+item_set_format Unsigned
+variable_add tb.dut.ftb_upd_is_br_u0
+item_set_format Bit
+variable_add tb.dut.ftb_upd_is_jmp_u0
+item_set_format Bit
+variable_add tb.dut.ftb_upd_hit_u0
+item_set_format Bit
+item_unfocus
+zoom_to 16 336

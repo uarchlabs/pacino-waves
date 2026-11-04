@@ -1,0 +1,150 @@
+# fd16_page_cross, examples/fe_demo (DOC-002, DOC-004, DOC-006); written by waves/mk_sucl.py
+# from out/fd16_page_cross/fd16_page_cross.fst, 1 prediction slot(s)
+# surfer out/fd16_page_cross/fd16_page_cross.fst -c waves/fd16_page_cross.sucl
+variable_force_name_type Unique
+# group clock
+variable_add tb.clk
+item_focus a
+group_marked clock
+item_focus b
+item_set_format Clock
+variable_add tb.rstn
+item_set_format Bit
+variable_add tb.cyc
+item_set_format Unsigned
+item_unfocus
+# group markers, from docs/fd16_page_cross.md section 5
+marker_set c0_reset_released 36
+item_focus e
+group_marked markers
+item_focus f
+marker_set c46_walk_for_VPN_0x80010 495
+marker_set c70_walk_for_VPN_0x80011 735
+marker_set c93_L1I_request_for_0x8100_0FC0 965
+marker_set c94_the_translation_queue_entry_of_the 975
+marker_set c107_the_second_line_returns 1105
+marker_set c109_the_straddling_instruction_reaches_decode 1125
+marker_set c112_the_run_ends 1155
+item_unfocus
+# group ftq_ifu
+variable_add tb.dut.ftq_ifu_req_val
+item_focus n
+group_marked ftq_ifu
+item_focus o
+item_set_format Bit
+variable_add tb.dut.ftq_ifu_req_rdy
+item_set_format Bit
+variable_add tb.dut.ftq_ifu_idx
+item_set_format Unsigned
+variable_add tb.dut.ftq_ifu_start_pc
+item_set_format Hexadecimal
+variable_add tb.dut.ftq_ifu_next_pc
+item_set_format Hexadecimal
+variable_add tb.dut.ftq_ifu_taken_val
+item_set_format Bit
+variable_add tb.dut.ftq_ifu_taken_pos
+item_set_format Unsigned
+variable_add tb.dut.ftq_ifu_flush_val
+item_set_format Bit
+variable_add tb.dut.ftq_ifu_flush_idx
+item_set_format Unsigned
+variable_add tb.dut.ftq_ifu_commit_ptr
+item_set_format Unsigned
+item_unfocus
+# group ifu_xlate
+variable_add tb.dut.u_ifu.u_xlate.xq_val
+item_focus bi
+group_marked ifu_xlate
+item_focus bj
+item_set_format Bit
+variable_add tb.dut.u_ifu.u_xlate.xq_pop
+item_set_format Bit
+variable_add tb.dut.u_ifu.u_xlate.xq_idx
+item_set_format Unsigned
+variable_add tb.dut.u_ifu.u_xlate.xq_pc
+item_set_format Hexadecimal
+variable_add tb.dut.u_ifu.u_xlate.xq_cross
+item_set_format Bit
+variable_add tb.dut.u_ifu.u_xlate.xq_ppn0
+item_set_format Hexadecimal
+variable_add tb.dut.u_ifu.u_xlate.xq_ppn1
+item_set_format Hexadecimal
+variable_add tb.dut.u_ifu.u_xlate.xq_fault0
+item_set_format Enum
+variable_add tb.dut.u_ifu.u_xlate.xq_fault1
+item_set_format Enum
+variable_add tb.dut.u_ifu.u_xlate.xq_uc
+item_set_format Bit
+item_unfocus
+# group itlb
+variable_add tb.dut.ifu_itlb_req_val
+item_focus cd
+group_marked itlb
+item_focus ce
+item_set_format Bit
+variable_add tb.dut.ifu_itlb_req_rdy
+item_set_format Bit
+variable_add tb.dut.ifu_itlb_vpn
+item_set_format Hexadecimal
+variable_add tb.dut.itlb_ifu_rsp_val
+item_set_format Bit
+variable_add tb.dut.itlb_ifu_status
+item_set_format Unsigned
+variable_add tb.dut.itlb_ifu_ppn
+item_set_format Hexadecimal
+variable_add tb.dut.itlb_ifu_cause
+item_set_format Unsigned
+item_unfocus
+# group ifu_l1i
+variable_add tb.dut.ifu_l1i_req_val
+item_focus cl
+group_marked ifu_l1i
+item_focus cm
+item_set_format Bit
+variable_add tb.dut.ifu_l1i_req_rdy
+item_set_format Bit
+variable_add tb.dut.ifu_l1i_req_id
+item_set_format Unsigned
+variable_add tb.dut.ifu_l1i_req_paddr
+item_set_format Hexadecimal
+variable_add tb.dut.ifu_l1i_req_uncached
+item_set_format Bit
+variable_add tb.dut.l1i_ifu_rsp_val
+item_set_format Bit
+variable_add tb.dut.l1i_ifu_rsp_id
+item_set_format Unsigned
+item_unfocus
+# group decode
+variable_add tb.dec_ibuf_rdy
+item_focus dd
+group_marked decode
+item_focus de
+item_set_format Bit
+variable_add tb.pd_out.[0].valid
+item_set_format Bit
+variable_add tb.pd_out.[0].start_pc
+item_set_format Hexadecimal
+variable_add tb.pd_out.[0].ftq_idx
+item_set_format Unsigned
+variable_add tb.pd_out.[0].pos
+item_set_format Unsigned
+variable_add tb.pd_out.[0].instr
+item_set_format Hexadecimal
+variable_add tb.pd_out.[0].is_rvc
+item_set_format Bit
+variable_add tb.pd_out.[0].fault_cause
+item_set_format Enum
+variable_add tb.pd_out.[0].fault_va
+item_set_format Hexadecimal
+variable_add tb.pd_out.[7].valid
+item_set_format Bit
+variable_add tb.pd_out.[7].start_pc
+item_set_format Hexadecimal
+variable_add tb.pd_out.[7].pos
+item_set_format Unsigned
+variable_add tb.pd_out.[7].instr
+item_set_format Hexadecimal
+variable_add tb.pd_out.[7].is_rvc
+item_set_format Bit
+item_unfocus
+zoom_to 16 336
